@@ -1,6 +1,7 @@
 name: Reusable workflow example
 
 on:
+  push:
   workflow_call:
     inputs:
       username:
