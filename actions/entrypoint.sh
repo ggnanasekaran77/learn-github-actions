@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-echo "Hello $1 $2 $3"
+echo "Hello $1 $2"
 echo "secret: ${input_github_token}"
 echo "test: ${test}"
 time=$(date)

@@ -10,7 +10,6 @@ jobs:
         uses: ./actions
         with:
           who-to-greet: 'Mona the Octocat'
-          test: 'helloworld'
         env:
           input_github_token: ${{ secrets.INPUT_GITHUB_TOKEN }}
           test: "helloworld"
