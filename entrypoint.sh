@@ -14,4 +14,4 @@ git fetch --prune --unshallow || true
 git ls-remote --tags origin
 
 git tag -a "${tag}" -m "${message}"
-git push origin "${tag}"
+git push origin "${tag}" || true
