@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 tag=${INPUT_TAG}
 message=${INPUT_MESSAGE}
 
