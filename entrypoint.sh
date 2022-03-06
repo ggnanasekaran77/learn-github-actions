@@ -9,7 +9,13 @@ git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git fetch --tags
 git fetch --prune --unshallow || true
 
-git ls-remote --tags origin
+current_tag=$(git ls-remote --tags origin | tail -1 | awk -F/ '{print $3}' | awk -F^ '{print $1}')
+echo "current_tag: ${current_tag}"
+
+major=$(echo current_tag | cut -d. -f1)
+minor=$(echo current_tag | cut -d. -f2)
+patch=$(echo current_tag | cut -d. -f3)
+echo "major: ${major} minor: ${minor} patch: ${patch}"
 
 git tag -a "${tag}" -m "${message}"
 git push origin "${tag}" || true
