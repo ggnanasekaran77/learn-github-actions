@@ -4,7 +4,7 @@ FROM alpine:3.10
 RUN apk add git \
     && mkdir /workdir
 
-ADD .. /workdir
+ADD . /workdir
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
