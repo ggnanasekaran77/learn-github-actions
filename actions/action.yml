@@ -6,14 +6,6 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
-  test:  # id of input
-    description: 'hello'
-    required: true
-    default: 'hello'
-  input_github_token:  # id of input
-    description: 'secret'
-    required: true
-    default: 'secret'
 outputs:
   time: # id of output
     description: 'The time we greeted you'

@@ -1,5 +1,7 @@
 #!/bin/sh -l
 
 echo "Hello $1 $2 $3"
+echo "secret: ${input_github_token}"
+echo "test: ${test}"
 time=$(date)
 echo "::set-output name=time::$time"
