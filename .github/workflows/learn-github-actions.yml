@@ -10,10 +10,8 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-  print_context:
-    runs-on: ubuntu-latest
-    steps:
-      - env:
-          EVENT_CONTEXT: ${{ toJSON(github.event) }}
-        run: |
-          echo $EVENT_CONTEXT
+      - name: Hello world action step
+        id: hello
+        uses: ./actions
+        with:
+          who-to-greet: 'Mona the Octocat'
