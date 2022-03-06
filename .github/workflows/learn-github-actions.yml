@@ -5,8 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        env:
+          commitmsg: ${{ github.event.head_commit.message }}
 
       - uses: ./
         with:
           tag: '1.0.2'
-          message: 'this is test tag'
+          message: ${{ env.commitmsg }}
