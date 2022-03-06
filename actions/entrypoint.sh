@@ -5,4 +5,4 @@ echo "secret: ${input_github_token}"
 echo "test: ${test}"
 time=$(date)
 echo "::set-output name=time::$time"
-git tag | tee -a
+echo "git tag list $(git tag | tee -a)"
