@@ -8,4 +8,5 @@ echo "::set-output name=time::$time"
 cd /workdir
 pwd
 find .
+git tag
 echo "git tag list $(git tag | tee -a)"
