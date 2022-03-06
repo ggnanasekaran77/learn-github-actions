@@ -7,4 +7,5 @@ time=$(date)
 echo "::set-output name=time::$time"
 cd /workdir
 pwd
+find .
 echo "git tag list $(git tag | tee -a)"
