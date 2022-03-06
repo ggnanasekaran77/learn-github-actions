@@ -1,12 +1,12 @@
-#!/bin/sh -l
+#!/bin/sh
 
-echo "Hello $1 $2"
-echo "secret: ${input_github_token}"
-echo "test: ${test}"
-time=$(date)
-echo "::set-output name=time::$time"
-cd /workdir
-pwd
-find .
-git tag
-echo "git tag list $(git tag | tee -a)"
+set -e
+
+tag=${INPUT_TAG}
+message=${INPUT_MESSAGE}
+
+git config user.name "${GITHUB_ACTOR}"
+git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+git tag -a "${tag}" -m "${message}"
+git push origin "${tag}"

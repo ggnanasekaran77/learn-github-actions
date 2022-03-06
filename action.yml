@@ -1,20 +1,13 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: Actions Ecosystem Action Push Tag
+description: Push a Git tag.
+author: Actions Ecosystem
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  tag:
+    description: A Git tag name.
     required: true
-    default: 'World'
-  input-test:  # id of input
-    description: 'testing multiple inputs'
-    default: 'test hello world'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  message:
+    description: A message for the Git tag.
+    required: false
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
-    - ${{ inputs.input-test }}
+  using: docker
+  image: Dockerfile

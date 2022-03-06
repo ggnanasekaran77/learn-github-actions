@@ -1,17 +1,12 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Hello world action step
-        id: hello
-        uses: ./
+
+      - uses: ./
         with:
-          who-to-greet: 'Mona the Octocat'
-        env:
-          input_github_token: ${{ secrets.INPUT_GITHUB_TOKEN }}
-          test: "helloworld"
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          tag: '1.0.2'
+          message: 'this is test tag'
